@@ -1,18 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="5374.jp金沢版" />
-    <meta property="og:type" content="product" />
-    <meta property="og:url" content="http://kanazawa.5374.jp/" />
-    <meta property="og:description" content="Code for Kanazawaの作った5374.jpは貴方の地域で、いつ、どのゴミが回収されるのか、簡単に知る事ができます。" />
-    <meta property="og:image" content="http://kanazawa.5374.jp/img/ogp.png" />
-    <meta name="Keywords" content="金沢市,5374,ごみ,ゴミ収集日" />
-    <meta name="description" content="Code for Kanazawaの作った5374.jpは貴方の地域で、いつ、どのゴミが回収されるのか、簡単に知る事ができます。" />
-    <title>5374(ｺﾞﾐﾅｼ).jp</title>
+    <meta property="og:title" content="5374.jp 和歌山県橋本市" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://osaka.5374.jp/" />
+    <meta property="og:description" content="Code for Kanazawaの作った5374.jpの和歌山県橋本市版です。5374.jpを使えば、あなたの地域で、いつ、どのゴミが回収されるのか、簡単に知る事ができます。" />
+    <meta property="og:image" content="http://osaka.5374.jp/img/ogp.jpg" width="1200" height="600" />
+    <title>5374(ｺﾞﾐﾅｼ).jp 和歌山県橋本市版</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
-    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <link href="css/custom.css" rel="stylesheet" media="screen" />
@@ -20,7 +18,37 @@
   <body>
   <style id="accordion-style" type="text/css"></style>
   <div id="accordion"></div>
+  <select class="form-control" id="select_area_master"></select>
   <select class="form-control" id="select_area"></select>
+  <div class="accordion" id="accordion3">
+    <div class="accordion-group-top">
+      <div class="accordion-heading">
+        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_1">ごみの分け方・出し方</a>
+      </div>
+      <div id="collapse3_1" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div id="help">
+            • ごみは決められた収集日に決められた場所に出してください。分別していないものや決められた場所に出していないものは収集しません。<br/>
+• 収集日や分別の仕方については、『ごみ収集日程表』(この5374.jpカレンダー)をご覧ください。<br/>
+• 粗大ごみは、ごみの大きさにより定められた収集シールを貼り、出してください。<br/>&#9657
+<a href="http://www.chw.jp/kurashi_tetsuduki/kankyo_gomi_recycle/gomi_risaikuru/1360645317438.html" target=”_blank” style=" color: #FF0000;text-decoration: underline;">粗大ごみ収集シール</a><br/>
+
+　橋本環境美化センター<br/>
+　　電話：36-1153<br/>
+　または<br/>
+　橋本市役所市民生活環境課<br/>
+　　電話：33-1111<br/>
+
+• 家電リサイクル対象品（テレビ、冷蔵庫、冷凍庫、エアコン、洗濯機、衣類乾燥機）については、市では収集できません。販売店へ直接お問い合わせください。<br/>
+• パソコンは、市では収集できません。PCリサイクルマークのあるものは、製造メーカーで処分することができます。直接連絡をお願いします。<br/>
+• 自作パソコンについてパソコン3R推進協会へお問い合わせください。<br/>&#9657
+<a href="http://www.pc3r.jp/index.html" target=”_blank” style=" color: #FF0000;text-decoration: underline;">パソコン3R推進協会</a><br/>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr>
   <div class="accordion" id="accordion3">
     <div class="accordion-group-top">
       <div class="accordion-heading">
@@ -44,46 +72,27 @@ Code for Kanazawaでは、先ずは正しいゴミの捨て方に注目しまし
             <p>お住まいの地域を選択することで、ゴミ収集日が自動的に更新されます。</p>
             <div id="caption">
               <h4>提供されるゴミ情報について</h4>
-              <p>金沢市が公開している<a target="_blank" href="http://www4.city.kanazawa.lg.jp/11010/opendata/other/kankyou.html">オープンデータ</a>を利用・変換を行い、アプリに実装しました。</p>
+              <p>和歌山県橋本市が公開しているデータを、アプリに実装しました。</p>
               <h4>ライセンスについて</h4>
               <p>本アプリの著作権はCode for Kanazawaに帰属します。</p>
             </div>
-            <div id="cfk">
-              <h3>Code for Kanazawaについて</h3>
-              <p>コードで、世界をHappyに。<br />
-各地域には様々な課題があり、解決するためのコミュニティ（団体）も数多くあります。<br />
-課題の中には、ITやデザインの力で解決できるものも多くありますが、全てのコミュニティにそのスキル（技術）が備わっているわけではありません。<br /><br />
-Code for Kanazawa（CfK）は、市民の課題を集め、その課題を整理・分析した上で、メンバーが実際に課題解決となるソフトウェアやハードウェア（仕組みや方法）を開発します。<br />
-私たちは、デザインをして、ソフトウェアコードを書き、課題を解決するサービスを完成させるのです。さらに、そのサービスを提供し続ける力も持ちます。<br /><br />
-CfKは市民のための組織です。行政や民間企業の影響を受けずに中立・公益の立場から物事を判断するよう心がけています。<br /><br />
-公式サイト<br />
-<a href="http://www.codeforkanazawa.org/" style=" color: #FF0000;text-decoration: underline;">http://www.codeforkanazawa.org/</a>
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
+  <a class="cal5374 btn btn-default" data-ics="http://cal5374.code4okinawa.org/calendar.ics" data-site="http://hiroshima.5374.jp" data-title="iCal" href="http://cal5374.code4okinawa.org/calendar?site=http%3A%2F%2Fhiroshima.5374.jp">iCal</a>
+  <script src="http://cal5374.code4okinawa.org/calendar.js"></script>
   <!-- JavaScript plugins (requires jQuery) -->
   <script src="js/jquery-1.10.2.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
-  <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) 
+  <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond)
   <script src="js/respond.js"></script>
-  -->  
+  -->
   <!-- ブックマークお勧めポップアップ追加-->
   <script src="js/bookmark-bubble/bookmark_bubble.min.js"></script>
   <script src="js/bookmark-bubble/example/example.min.js"></script>
   <script src="js/setting.js"></script>
   <script src="js/script.js"></script>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-43926409-1', '5374.jp');
-  ga('send', 'pageview');
-  </script>
   </body>
 </html>
